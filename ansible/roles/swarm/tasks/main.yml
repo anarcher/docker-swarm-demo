@@ -1,0 +1,7 @@
+- name: Install swarm
+  copy: >
+    src=swarm-{{ swarm-version }}
+    dest=/usr/local/bin/swarm
+    owner=root
+    group=root
+    mode=0774

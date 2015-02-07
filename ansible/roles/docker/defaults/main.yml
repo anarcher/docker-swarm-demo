@@ -1,0 +1,5 @@
+use_tls: False
+docker_port: 2375
+docker_labels:
+  - 'none=none'
+
