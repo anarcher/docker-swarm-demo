@@ -4,3 +4,8 @@
     name=swarm_client
     state=restarted
 
+- name: restart swarm manager
+  sudo: true
+  service: >
+    name=swarm_manager
+    state=restarted

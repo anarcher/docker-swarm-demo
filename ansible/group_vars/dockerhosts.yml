@@ -3,7 +3,7 @@
 user: vagrant
 
 docker_host: "{{ ansible_eth1['ipv4']['address'] }}:{{ docker_port }}" 
-consul_host: dockerswarm01
+consul_host: dockerswarm01:8500
 swarm_discovery_string: "consul://{{ consul_host }}/swarm"
 
 dns_servers:

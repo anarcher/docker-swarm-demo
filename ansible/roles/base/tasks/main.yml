@@ -1,0 +1,8 @@
+- name: Install python-pip
+  apt: pkg=python-pip
+  sudo: yes
+
+- name: Install docker-py via pip
+  pip: name=docker-py version=0.7.2
+  sudo: yes
+

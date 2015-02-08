@@ -1,0 +1,23 @@
+- name: Install swarm upstart 
+  template: >
+    src=swarm_manager.upstart.j2
+    dest=/etc/init/swarm_manager.conf
+    owner=root
+    group=root
+    mode=0644
+  notify:
+    - restart swarm manager
+  sudo: yes
+  tags:
+    - manage
+
+- name: Start and enable Swarm manager
+  sudo: yes
+  service: >
+    name=swarm_manager
+    state=started
+    enabled=true
+  tags:
+    - manage
+
+

@@ -1,2 +1,6 @@
+docker_port: 2375
+swarm_manager_port: 2376
 swarm_version: "0.1.0-HEAD"
 swarm_discovery_string: 'file:///etc/swarm_config'
+swarm_discovery: file
+packing_strategy: random

@@ -1,0 +1,20 @@
+---
+
+- hosts: dockerswarms
+  sudo: no
+  roles:
+      - base
+      - docker
+      - { role: "swarm", tasks: "manage" }
+  tasks:
+      - name: Pull images
+        sudo: True
+        command: >
+            docker pull {{ item }}:latest
+        with_items: docker_images
+      - name: Run consul
+        sudo: yes
+        shell: > 
+            if ! docker ps | grep consul ; then
+                docker run --name manager -d -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h dockerswarm01 progrium/consul -server -bootstrap -ui-dir /ui
+            fi

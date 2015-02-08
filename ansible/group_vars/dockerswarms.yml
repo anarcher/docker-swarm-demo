@@ -1,0 +1,6 @@
+---
+
+user: vagrant
+
+docker_images:
+  - progrium/consul

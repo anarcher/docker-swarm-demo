@@ -7,8 +7,6 @@
     group=root
     mode=0777
 
-- include: ./swarm_join.yml
-  tags:
-    - swarm_join
-
+- include: swarm_{{ tasks }}.yml 
+  when: tasks is defined
 
