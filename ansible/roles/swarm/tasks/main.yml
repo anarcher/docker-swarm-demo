@@ -1,10 +1,11 @@
 - name: Install swarm
+  sudo: yes
   copy: >
-    src=swarm-{{ swarm-version }}
+    src=swarm-{{ swarm_version }}
     dest=/usr/local/bin/swarm
     owner=root
     group=root
-    mode=0774
+    mode=0777
 
 - include: ./swarm_join.yml
   tags:

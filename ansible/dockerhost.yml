@@ -4,7 +4,7 @@
   sudo: no
   roles:
       - docker
-      #      - docker_swarm
+      - { role: "swarm", tags: ["join"] }
   tasks:
     - name: Pull images
       sudo: True
