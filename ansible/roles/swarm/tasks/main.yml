@@ -5,3 +5,9 @@
     owner=root
     group=root
     mode=0774
+
+- include: ./swarm_join.yml
+  tags:
+    - swarm_join
+
+

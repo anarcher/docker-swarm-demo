@@ -1,0 +1,17 @@
+- name: Install swarm upstart 
+  template: >
+    src=swarm_join.upstart.j2
+    dest=/etc/init/swam_join.conf
+    owner=root
+    group=root
+    mode=0644
+  notify:
+    - restart swarm client
+  sudo: yes
+
+- name: Start and enable Swarm
+  sudo: yes
+  service: >
+    name=swarm_join
+    state=started
+    enabled=true

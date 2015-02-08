@@ -1,1 +1,2 @@
 swarm_version: "0.1.0-HEAD"
+swarm_discovery_string: 'file:///etc/swarm_config'
