@@ -1,0 +1,2 @@
+export DOCKER_HOST=dockerswarm01:2376
+export SWARM_CONSUL_DISCOVER_URL=consul://dockerswarm01:8500/swarm

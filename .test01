@@ -1,0 +1,2 @@
+docker run --rm -v /etc/hostname:/etc/hostname -e constraint:region==DK01 busybox cat /etc/hostname
+docker run --rm -v /etc/hostname:/etc/hostname -e constraint:region==DK02 busybox cat /etc/hostname

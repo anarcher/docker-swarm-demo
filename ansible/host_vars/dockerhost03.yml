@@ -1,0 +1,8 @@
+---
+
+docker_labels:
+  - 'status=master'
+  - 'disk=ssd'
+  - 'zone=external'
+  - 'region=DK02'
+

@@ -1,3 +1,5 @@
 vagrant_ansible_inventory_dockerhost01
+vagrant_ansible_inventory_dockerhost02
+vagrant_ansible_inventory_dockerhost03
 vagrant_ansible_inventory_dockerswarm01
 .vagrant
