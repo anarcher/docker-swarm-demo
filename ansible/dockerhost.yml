@@ -3,7 +3,6 @@
 - hosts: dockerhosts
   sudo: no
   roles:
-      - base
       - docker
       - { role: "swarm", tasks: "join" }
   tasks:

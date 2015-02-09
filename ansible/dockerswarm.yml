@@ -3,7 +3,6 @@
 - hosts: dockerswarms
   sudo: no
   roles:
-      - base
       - docker
       - consul
       - { role: "swarm", tasks: "manage" }
