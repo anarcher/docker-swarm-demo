@@ -28,6 +28,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant|
   # Docker Hosts
   (1..3).each do |i|
     vagrant.vm.define "dockerhost0#{i}" do |config|
+      if i == 2 then
+          config.vm.provider "virtualbox" do |v|
+              v.memory = 200
+          end
+      end
       config.vm.hostname = "dockerhost0#{i}"
       config.vm.network "private_network", ip: "10.100.199.20#{i}"
       config.vm.provision :hosts do |p|

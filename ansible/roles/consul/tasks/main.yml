@@ -7,10 +7,24 @@
 - name: Run consul
   sudo: yes
   shell: > 
-        if docker ps | grep consul ; then
-            docker stop manager
-        fi ;
-        if docker ps -a | grep consul ; then
-            docker rm manager
-        fi ;
-        docker run --name manager -d -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h dockerswarm01 progrium/consul -server -bootstrap -ui-dir /ui
+        if ! docker ps -a | grep manager ; then
+            docker create --name manager -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h dockerswarm01 progrium/consul -server -bootstrap-expect 1 -ui-dir /ui ;
+        fi
+
+- name: Upstart consul
+  template: >
+      src=consul.upstart.j2 
+      dest=/etc/init/consul.conf
+      owner=root
+      group=root
+      mode=0644
+  notify:
+      - restart consul
+  sudo: yes
+  
+- name: Start and enable Consul
+  sudo: yes
+  service: >
+      name=consul
+      state=started
+      enabled=true

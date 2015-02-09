@@ -8,8 +8,6 @@
   notify:
     - restart swarm client
   sudo: yes
-  tags:
-      - join
 
 - name: Start and enable Swarm client
   sudo: yes
@@ -17,7 +15,3 @@
     name=swarm_client
     state=started
     enabled=true
-  tags:
-      - join
-
-
