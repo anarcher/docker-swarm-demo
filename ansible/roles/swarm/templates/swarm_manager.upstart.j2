@@ -7,6 +7,6 @@ script
 /usr/local/bin/swarm manage \
     -H tcp://0.0.0.0:{{ swarm_manager_port }} \
     --strategy {{  packing_strategy }} \
-    --discovery {{ swarm_discovery_string }}
+    {{ swarm_discovery_string }}
 end script
 

@@ -8,8 +8,6 @@
   notify:
     - restart swarm manager
   sudo: yes
-  tags:
-    - manage
 
 - name: Start and enable Swarm manager
   sudo: yes
@@ -17,7 +15,5 @@
     name=swarm_manager
     state=started
     enabled=true
-  tags:
-    - manage
 
 

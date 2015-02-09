@@ -2,5 +2,9 @@
 
 user: vagrant
 
+consul_host: dockerswarm01:8500
+swarm_discovery_string: "consul://{{ consul_host }}/swarm"
+packing_strategy: binpacking
+
 docker_images:
   - progrium/consul
