@@ -4,6 +4,15 @@ console log
 start on filesystem and started docker
 stop on runlevel[!2345]
 respawn
+pre-start script
+    /usr/bin/docker create --name consul -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h dockerswarm01 progrium/consul -server -bootstrap-expect=1 -ui-dir=/ui
+end script
+
 script
     /usr/bin/docker start -a consul
+end script
+
+post-stop script
+    /usr/bin/docker stop consul
+    /usr/bin/docker rm consul
 end script
