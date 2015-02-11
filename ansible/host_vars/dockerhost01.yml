@@ -6,3 +6,7 @@ docker_labels:
   - 'zone=internal'
   - 'region=DK01'
 
+docker_images:
+  - busybox
+  - mini/base
+  - mini/redis
