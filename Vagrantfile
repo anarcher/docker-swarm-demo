@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant|
   # Docker Hosts
   (1..3).each do |i|
     vagrant.vm.define "dockerhost0#{i}" do |config|
-      if i == 2 then
+      if i == 1 || i == 2 then
           config.vm.provider "virtualbox" do |v|
               v.memory = 200
           end
